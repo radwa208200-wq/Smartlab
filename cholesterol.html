@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cholesterol Test Report</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+
+    <h2 class="logo">Health<span>Life</span></h2>
+
+    <nav>
+      <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+      <a href="services.html" data-en="Other Services" data-ar="خدمات اخرى">Other Services</a>
+      <a href="about.html" data-en="About" data-ar="عن المعمل">About</a>
+      <a href="contact.html" data-en="Contact" data-ar="تواصل معنا">Contact</a>
+
+      <a href="booking.html" class="btn"
+         data-en="Book Test" data-ar="احجز تحليل">
+        Book Test
+      </a>
+
+      <button class="btn" id="langBtn" onclick="toggleLang()">AR</button>
+    </nav>
+
+  </div>
+</header>
+
+<section class="page cholesterol">
+
+  <div class="container report-layout">
+
+    <!-- النص -->
+    <div class="report-text">
+      <h1 data-en="Cholesterol Test Report" data-ar="تقرير تحليل الكوليسترول">
+        Cholesterol Test Report
+      </h1>
+
+      <pre id="typingText" class="typing-box"></pre>
+    </div>
+
+    <!-- الصورة -->
+    <div class="report-image">
+      <img src="images/cholesterol.jpeg" alt="Hormone Test">
+    </div>
+
+  </div>
+
+</section>
+
+<script src="js/script.js"></script>
+
+<script>
+/* =====================
+   Hormone Live Typing
+===================== */
+
+const reportText = {
+  en: `• Measures cholesterol levels in the blood.
+• Helps assess heart disease risk.
+
+• High cholesterol may lead to:
+- Heart attacks
+- Stroke
+- Blood vessel blockage
+
+Preparation Tips:
+• Fasting 9–12 hours before test
+• Avoid fatty meals
+• Drink water only
+
+When to test?
+• If you have obesity
+• Family history of heart disease
+• High blood pressure or diabetes`,
+
+  ar: `• يقيس مستوى الكوليسترول في الدم
+• يساعد في تقييم مخاطر أمراض القلب
+
+• ارتفاع الكوليسترول قد يؤدي إلى:
+- الجلطات
+- أمراض القلب
+- انسداد الشرايين
+
+تعليمات قبل التحليل:
+• صيام من 9 إلى 12 ساعة
+• تجنب الأكلات الدسمة
+• شرب الماء فقط
+
+متى تحتاج التحليل؟
+• السمنة
+• تاريخ عائلي مع أمراض القلب
+• ضغط أو سكر`
+};
+
+const target = document.getElementById("typingText");
+let charIndex = 0;
+let typingInterval = null;
+
+function startTyping() {
+  if (!target) return;
+
+  clearInterval(typingInterval);
+  target.textContent = "";
+  charIndex = 0;
+
+  const text = reportText[lang];
+
+  typingInterval = setInterval(() => {
+    target.textContent += text.charAt(charIndex);
+    charIndex++;
+
+    if (charIndex >= text.length) {
+      clearInterval(typingInterval);
+    }
+  }, 30);
+}
+
+window.addEventListener("load", startTyping);
+
+let lastLang = lang;
+setInterval(() => {
+  if (lang !== lastLang) {
+    lastLang = lang;
+    startTyping();
+  }
+}, 200);
+</script>
+
+</body>
+</html>

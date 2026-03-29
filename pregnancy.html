@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pregnancy Test Report</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+
+    <h2 class="logo">Health<span>Life</span></h2>
+
+    <nav>
+      <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+      <a href="services.html" data-en="Other Services" data-ar="خدمات اخرى">Other Services</a>
+      <a href="about.html" data-en="About" data-ar="عن المعمل">About</a>
+      <a href="contact.html" data-en="Contact" data-ar="تواصل معنا">Contact</a>
+
+      <a href="booking.html" class="btn"
+         data-en="Book Test" data-ar="احجز تحليل">
+        Book Test
+      </a>
+
+      <button class="btn" id="langBtn" onclick="toggleLang()">AR</button>
+    </nav>
+
+  </div>
+</header>
+
+<section class="page pregnancy">
+
+  <div class="container report-layout">
+
+    <!-- النص -->
+    <div class="report-text">
+      <h1 data-en="Pregnancy Test Report" data-ar="تقرير تحليل الحمل">
+        Pregnancy Test Report
+      </h1>
+
+      <pre id="typingText" class="typing-box"></pre>
+    </div>
+
+    <!-- الصورة -->
+    <div class="report-image">
+      <img src="images/pregnancy.jpeg" alt="Pregnancy Test">
+    </div>
+
+  </div>
+
+</section>
+
+<script src="js/script.js"></script>
+
+<script>
+/* =====================
+   DNA Live Typing Report
+===================== */
+
+const reportText = {
+  en: `🤰 What is a Pregnancy Test?
+• Detects the presence of HCG hormone
+• Confirms pregnancy accurately and early
+
+⏱ When to Take the Test:
+• After missed period
+• Best results in early morning
+
+🧪 Test Types:
+• Blood Pregnancy Test (Most accurate)
+• Urine Pregnancy Test
+
+📊 Result Meanings:
+• Positive ➜ Pregnancy confirmed
+• Negative ➜ No pregnancy (may repeat)
+
+⚠ Important Tips:
+• Avoid excessive fluids before test
+• Follow doctor guidance
+• Early testing may give false results 
+
+💡 Why Choose Our Lab?
+✔ Fast & confidential
+✔ Accurate results
+✔ Expert medical supervision`,
+ ar: `🤰 ما هو تحليل الحمل؟
+• يكشف عن هرمون الحمل HCG
+• يؤكد وجود الحمل بدقة عالية
+
+⏱ متى يتم إجراء التحليل؟
+• بعد تأخر الدورة
+• يفضل في الصباح الباكر
+
+🧪 أنواع تحليل الحمل:
+• تحليل دم (الأدق)
+• تحليل بول
+
+📊 تفسير النتائج:
+• إيجابي ➜ يوجد حمل
+• سلبي ➜ لا يوجد (يمكن إعادة التحليل)
+
+⚠ نصائح مهمة:
+• تجنب شرب سوائل كثيرة قبل التحليل
+• الالتزام بتعليمات الطبيب
+• التحليل المبكر قد يعطي نتيجة غير دقيقة
+
+💡 لماذا Health Life؟
+✔ نتائج سريعة وسرية
+✔ دقة عالية
+✔ إشراف طبي متخصص`
+};
+
+
+const target = document.getElementById("typingText");
+let charIndex = 0;
+let typingInterval = null;
+
+function startTyping() {
+  if (!target) return;
+
+  clearInterval(typingInterval);
+  target.textContent = "";
+  charIndex = 0;
+
+  const text = reportText[lang];
+
+  typingInterval = setInterval(() => {
+    target.textContent += text.charAt(charIndex);
+    charIndex++;
+
+    if (charIndex >= text.length) {
+      clearInterval(typingInterval);
+    }
+  }, 30);
+}
+
+// أول ما الصفحة تفتح
+window.addEventListener("load", startTyping);
+
+// متابعة تغيير اللغة
+let lastLang = lang;
+setInterval(() => {
+  if (lang !== lastLang) {
+    lastLang = lang;
+    startTyping();
+  }
+}, 200);
+</script>
+
+</body>
+</html>

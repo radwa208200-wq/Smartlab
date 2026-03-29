@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Health Life Medical Lab</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+
+    <h2 class="logo">Health<span>Life</span></h2>
+
+    <nav>
+      <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+      <a href="services.html" data-en="Other Services" data-ar="خدمات اخرى">Other Services</a>
+      <a href="about.html" data-en="About" data-ar="عن المعمل">About</a>
+      <a href="contact.html" data-en="Contact" data-ar="تواصل معنا">Contact</a>
+
+      <!-- Book Test -->
+      <a href="booking.html" class="btn"
+         data-en="Book Test" data-ar="احجز تحليل">
+        Book Test
+      </a>
+
+      <!-- زر الترجمة -->
+      <button class="btn" id="langBtn" onclick="toggleLang()">AR</button>
+    </nav>
+
+  </div>
+</header>
+
+<section class="hero">
+  <div class="overlay">
+    <div class="container hero-content">
+      
+      <div class="text">
+        <h1 data-en="Medical Analysis & Laboratory Services"
+            data-ar="خدمات التحاليل الطبية">
+          Medical Analysis & Laboratory Services
+        </h1>
+        <p data-en="Accurate, fast and reliable medical testing using advanced technology."
+           data-ar="تحاليل طبية دقيقة وسريعة باستخدام أحدث التقنيات">
+          Accurate, fast and reliable medical testing using advanced technology.
+        </p>
+        
+      </div>
+
+      <div class="images">
+        <img src="images/doctor.jpeg" alt="Doctor">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="features container">
+  <div class="feature">
+    <h3 data-en="✔ Accurate Results"
+    data-ar="✔ نتائج دقيقة">
+✔ Accurate Results
+</h3>
+<p data-en="High precision medical analysis."
+   data-ar="تحاليل طبية عالية الدقة">
+High precision medical analysis.
+</p>
+  </div>
+  <div class="feature">
+    <h3 data-en="⚡ Fast Reports"
+    data-ar="⚡ تقارير سريعة">
+⚡ Fast Reports
+</h3>
+<p data-en="Quick delivery of test results."
+   data-ar="سرعة في تسليم نتائج التحاليل">
+Quick delivery of test results.
+</p>
+  </div>
+  <div class="feature">
+    <h3 data-en="🧬 Advanced Lab"
+    data-ar="🧬 معمل متطور">
+🧬 Advanced Lab
+</h3>
+<p data-en="Modern laboratory equipment."
+   data-ar="أحدث أجهزة المعامل">
+Modern laboratory equipment.
+</p>
+  </div>
+  <div class="feature">
+  <h3 data-en="📲 Online Booking" data-ar="📲 حجز التحاليل أونلاين">📲 Online Booking</h3>
+  <p data-en="Book your medical tests easily online." data-ar="احجز تحاليلك الطبية بسهولة أونلاين">
+    Book your medical tests easily online.
+  </p>
+</div>
+
+<div class="feature">
+  <h3 data-en="📈 Results Tracking" data-ar="📈 متابعة النتائج">📈 Results Tracking</h3>
+  <p data-en="Track your test results online easily." data-ar="متابعة نتائج تحاليلك عبر الإنترنت بسهولة">
+    Track your test results online easily.
+  </p>
+</div>
+
+<div class="feature">
+  <h3 data-en="🏠 Home Sample Collection" data-ar="🏠 خدمات التوصيل للمنزل">🏠 Home Sample Collection</h3>
+  <p data-en="Get sample collection at your home." data-ar="خدمات أخذ العينات من المنزل">
+    Get sample collection at your home.
+  </p>
+</div>
+
+<div class="feature">
+  <h3 data-en="🕑 24/7 Support" data-ar="🕑 دعم على مدار الساعة">🕑 24/7 Support</h3>
+  <p data-en="We provide round-the-clock support." data-ar="نقدم دعم على مدار الساعة">
+    We provide round-the-clock support.
+  </p>
+</div>
+
+<div class="feature">
+  <h3 data-en="👨‍⚕️ Expert Lab Staff" data-ar="👨‍⚕️ فريق معمل متخصص">👨‍⚕️ Expert Lab Staff</h3>
+  <p data-en="Highly skilled medical laboratory staff." data-ar="فريق مختص وذو خبرة في المعمل">
+    Highly skilled medical laboratory staff.
+  </p>
+</div>
+
+<div class="feature">
+  <h3 data-en="✔ Accurate & Fast Results" data-ar="✔ نتائج دقيقة وسريعة">✔ Accurate & Fast Results</h3>
+  <p data-en="Reliable and quick test results." data-ar="نتائج موثوقة وسريعة">
+    Reliable and quick test results.
+  </p>
+</div>
+</section>
+
+<section class="services">
+  <h2>Our Main Services</h2>
+  <div class="container cards">
+    <div class="card">
+      <a href="blood.html" data-test="blood">
+      <img src="images/lab1.jpeg">
+      <h3 data-en="Blood Tests"
+    data-ar="تحاليل الدم">
+Blood Tests
+</h3>
+</a>
+<div class="test-info">
+  <span data-en="⏱ Result: Same Day"
+        data-ar="⏱ النتيجة: في نفس اليوم">
+        ⏱ Result: Same Day
+  </span>
+
+  <span data-en="🕒 Fasting: Not Required"
+        data-ar="🕒 صيام: غير مطلوب">
+        🕒 Fasting: Not Required
+  </span>
+</div>
+
+<p class="details"
+   data-en="Comprehensive blood analysis to detect anemia, infections, and general health conditions with high accuracy."
+   data-ar="تحليل شامل للدم لاكتشاف الأنيميا والعدوى وتقييم الحالة الصحية بدقة عالية.">
+   Comprehensive blood analysis to detect anemia, infections, and general health conditions with high accuracy.
+</p>
+<p class="price" data-en="price: 250 EGP" data-ar="السعر: 250 جنيه">price: 250 EGP</p>
+<a href="booking.html" class="book-btn"
+   data-en="Book Now"
+   data-ar="احجز الآن">
+   Book Now
+</a>
+    </div>
+    
+    <div class="card">
+      <a href="dna.html" data-test="dna">
+      <img src="images/lab2.jpeg">
+      <h3 data-en="DNA Testing"
+    data-ar="تحليل الحمض النووي">
+DNA Testing
+</h3>
+</a>
+<div class="test-info">
+  <span data-en="⏱ Result: 5-7 Days"
+        data-ar="⏱ النتيجة: من 5 إلى 7 أيام">
+        ⏱ Result: 5-7 Days
+  </span>
+
+  <span data-en="🕒 Fasting: Not Required"
+        data-ar="🕒 صيام: غير مطلوب">
+        🕒 Fasting: Not Required
+  </span>
+</div>
+
+<p class="details"
+   data-en="Advanced genetic testing to identify inherited diseases and provide accurate genetic insights."
+   data-ar="تحليل جيني متقدم لاكتشاف الأمراض الوراثية وتقديم معلومات دقيقة عن الحالة الجينية.">
+   Advanced genetic testing to identify inherited diseases and provide accurate genetic insights.
+</p>
+<p class="price" data-en="price: 1200 EGP" data-ar="السعر: 1200 جنيه">price: 1200 EGP</p>
+<a href="booking.html" class="book-btn"
+   data-en="Book Now"
+   data-ar="احجز الآن">
+   Book Now
+</a>
+    </div>
+    <div class="card">
+      <a href="hormone.html" data-test="hormone">
+      <img src="images/lab3.jpeg">
+      <h3 data-en="Hormone Tests"
+    data-ar="تحاليل الهرمونات">
+Hormone Tests
+</h3>
+</a>
+<div class="test-info">
+  <span data-en="⏱ Result: 5-7 Days"
+        data-ar="⏱ النتيجة: من 5 إلى 7 أيام">
+        ⏱ Result: 5-7 Days
+  </span>
+
+  <span data-en="🕒 Fasting: Not Required"
+        data-ar="🕒 صيام: غير مطلوب">
+        🕒 Fasting: Not Required
+  </span>
+</div>
+
+<p class="details"
+   data-en="Advanced genetic testing to identify inherited diseases and provide accurate genetic insights."
+   data-ar="تحليل جيني متقدم لاكتشاف الأمراض الوراثية وتقديم معلومات دقيقة عن الحالة الجينية.">
+   Advanced genetic testing to identify inherited diseases and provide accurate genetic insights.
+</p>
+<p class="price" data-en="price: 400 EGP" data-ar="السعر: 400 جنيه">price: 400 EGP</p>
+<a href="booking.html" class="book-btn"
+   data-en="Book Now"
+   data-ar="احجز الآن">
+   Book Now
+</a>
+</div>
+<div class="card">
+  <a href="cholesterol.html"  data-test="cholesterol">
+  <img src="images/cholesterol.jpeg">
+  <h3 data-en="Cholesterol Test" data-ar="تحليل الكوليسترول">Cholesterol Test</h3></a>
+  <div class="test-info">
+  <span data-en="⏱ Result: Same Day"
+        data-ar="⏱ النتيجة: في نفس اليوم">
+        ⏱ Result: Same Day
+  </span>
+
+  <span data-en="🕒 Fasting: 8-12 Hours"
+        data-ar="🕒 صيام: من 8 إلى 12 ساعة">
+        🕒 Fasting: 8-12 Hours
+  </span>
+</div>
+
+<p class="details"
+   data-en="Measures total cholesterol, LDL, HDL, and triglycerides to assess heart health."
+   data-ar="قياس الكوليسترول الكلي والضار والنافع والدهون الثلاثية لتقييم صحة القلب.">
+   Measures total cholesterol, LDL, HDL, and triglycerides to assess heart health.
+</p>
+  <p class="price" data-en="price: 180 EGP" data-ar="السعر: 180 جنيه">price: 180 EGP</p>
+  <a href="booking.html" class="book-btn"
+   data-en="Book Now"
+   data-ar="احجز الآن">
+   Book Now
+</a>
+</div>
+
+<div class="card">
+   <a href="diabetes.html"  data-test="diabetes">
+  <img src="images/diabetes.jpeg">
+  <h3 data-en="Diabetes Test" data-ar="تحليل السكري">Diabetes Test</h3></a>
+  <div class="test-info">
+  <span data-en="⏱ Result: Same Day"
+        data-ar="⏱ النتيجة: في نفس اليوم">
+        ⏱ Result: Same Day
+  </span>
+
+  <span data-en="🕒 Fasting: 8 Hours (for fasting test)"
+        data-ar="🕒 صيام: 8 ساعات لتحليل السكر الصائم">
+        🕒 Fasting: 8 Hours (for fasting test)
+  </span>
+</div>
+
+<p class="details"
+   data-en="Blood glucose testing to diagnose and monitor diabetes and maintain healthy sugar levels."
+   data-ar="تحليل مستوى السكر في الدم لتشخيص ومتابعة مرض السكري والحفاظ على المعدلات الطبيعية.">
+   Blood glucose testing to diagnose and monitor diabetes and maintain مستويات السكر الطبيعية.
+</p>
+  <p class="price" data-en="price: 200 EGP" data-ar="السعر: 200 جنيه">price: 200 EGP</p>
+  <a href="booking.html" class="book-btn"
+   data-en="Book Now"
+   data-ar="احجز الآن">
+   Book Now
+</a>
+</div>
+
+<div class="card">
+  <a href="pregnancy.html" data-test="pregnancy">
+  <img src="images/pregnancy.jpeg">
+  <h3 data-en="Pregnancy Test" data-ar="تحليل الحمل">Pregnancy Test</h3></a>
+  <div class="test-info">
+  <span data-en="⏱ Result: Within 1 Hour"
+        data-ar="⏱ النتيجة: خلال ساعة">
+        ⏱ Result: Within 1 Hour
+  </span>
+
+  <span data-en="🕒 Fasting: Not Required"
+        data-ar="🕒 صيام: غير مطلوب">
+        🕒 Fasting: Not Required
+  </span>
+</div>
+
+<p class="details"
+   data-en="Fast and reliable pregnancy detection through accurate hormone analysis."
+   data-ar="تحليل سريع وموثوق لاكتشاف الحمل من خلال قياس هرمون الحمل بدقة.">
+   Fast and reliable pregnancy detection through accurate hormone analysis.
+</p>
+  <p class="price" data-en="price: 150 EGP" data-ar="السعر: 150 جنيه">price: 150 EGP</p>
+  <a href="booking.html" class="book-btn"
+   data-en="Book Now"
+   data-ar="احجز الآن">
+   Book Now
+</a>
+    </div>
+  </div>
+</section>
+
+<section class="symptom-checker container">
+  <h2 data-en="Check Which Test You Need" data-ar="تحقق من التحليل المناسب لك">
+    Check Which Test You Need
+  </h2>
+
+  <p data-en="Enter your symptoms separated by commas (e.g., fever, cough)" 
+     data-ar="أدخل الأعراض مفصولة بفواصل (مثلاً: حرارة، سعال)">
+    Enter your symptoms separated by commas (e.g., fever, cough)
+  </p>
+
+  <input type="text" id="symptomInput"
+         placeholder="Enter your symptoms"
+         data-en-placeholder="Enter your symptoms"
+         data-ar-placeholder="أدخل أعراضك">
+
+  <button class="btn" onclick="submitSymptoms()"
+          data-en="Check Test" data-ar="تحقق من التحليل">
+    Check Test
+  </button>
+
+  <div id="output" style="margin-top:20px;"></div>
+</section>
+
+<footer>
+  <p>© 2026 Health Life Medical Laboratory</p>
+</footer>
+<script src="js/script.js"></script>
+<a href="https://wa.me/201234567890" class="whatsapp">💬</a>
+</body>
+</html>

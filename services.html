@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+/* =======================
+   صفحة الخدمات CSS
+======================= */
+body {
+  font-family: Arial, sans-serif;
+  background: #f7faff;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background: #3c5392;
+  padding: 15px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0,0,0,.1);
+}
+header .logo {
+  color: #0077b6;
+  font-size: 22px;
+  font-weight: bold;
+}
+header .logo span { color: #00b4d8; }
+nav { display: flex; justify-content: space-between; align-items: center; width: 90%; margin: auto; }
+nav a { margin: 0 10px; text-decoration: none; color: #fff; font-weight: bold; }
+nav a:hover { color: #00b4d8; }
+nav .btn { background:#0077b6; padding:6px 12px; border-radius:20px; border:none; cursor:pointer; color:#fff; }
+nav .btn:hover { background:#00b4d8; }
+
+.page { padding: 120px 10px 50px 10px; text-align:center; }
+.page h1 { color:#0077b6; margin-bottom:15px; font-size:32px; }
+.page p { color:#555; margin-bottom:30px; font-size:16px; }
+
+.container.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 20px;
+  max-width:1200px;
+  margin:auto;
+}
+
+.card {
+  background:#fff;
+  border-radius:15px;
+  box-shadow:0 5px 15px rgba(0,0,0,.1);
+  padding:20px;
+  transition:0.3s;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+.card:hover { transform:translateY(-5px); box-shadow:0 10px 25px rgba(0,0,0,.15); }
+.card .icon { font-size:40px; margin-bottom:10px; }
+.card h3 { color:#0077b6; margin-bottom:10px; font-size:20px; }
+.card p { color:#555; font-size:14px; margin:5px 0; }
+.card .price { font-weight:bold; color:#0077b6; }
+
+.home-service { background:#e0f7ff; }
+
+#symptomDropdown { padding:10px; border-radius:10px; border:1px solid #ccc; width:250px; font-size:16px; margin-bottom:30px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <h2 class="logo">Health<span>Life</span></h2>
+    <nav>
+      <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+      <a href="services.html" data-en="Other Services" data-ar="خدمات اخرى">Other Services</a>
+      <a href="about.html" data-en="About" data-ar="عن المعمل">About</a>
+      <a href="contact.html" data-en="Contact" data-ar="تواصل معنا">Contact</a>
+      <a href="booking.html" class="btn" data-en="Book Test" data-ar="احجز تحليل">Book Test</a>
+      <button class="btn" id="langBtn">AR</button>
+    </nav>
+  </div>
+</header>
+
+<section class="page">
+  <h1 data-en="Our Medical Services" data-ar="خدماتنا الطبية">Our Medical Services</h1>
+  <p data-en="We care about your comfort — in our lab or at your home."
+     data-ar="نهتم براحتك — داخل المعمل أو في بيتك.">
+    We care about your comfort — in our lab or at your home.
+  </p>
+
+  <!-- Symptom Drop-down -->
+  <div class="container">
+    <select id="symptomDropdown">
+      <option value="" data-en="-- Select Symptom --" data-ar="-- اختر عرض --">-- Select Symptom --</option>
+      <option value="fatigue" data-en="Fatigue" data-ar="إجهاد">Fatigue</option>
+      <option value="pale" data-en="Pale skin" data-ar="شاحب">Pale skin</option>
+      <option value="weakness" data-en="Weakness" data-ar="ضعف">Weakness</option>
+      <option value="loss of taste" data-en="Loss of taste" data-ar="فقدان التذوق">Loss of taste</option>
+      <option value="fever" data-en="Fever" data-ar="حرارة">Fever</option>
+      <option value="cough" data-en="Cough" data-ar="كحة">Cough</option>
+      <option value="nausea" data-en="Nausea" data-ar="غثيان">Nausea</option>
+      <option value="period delay" data-en="Period delay" data-ar="تأخر الدورة">Period delay</option>
+      <option value="mood swings" data-en="Mood swings" data-ar="تقلبات مزاجية">Mood swings</option>
+      <option value="irregular periods" data-en="Irregular periods" data-ar="عدم انتظام الدورة">Irregular periods</option>
+      <option value="family disease" data-en="Family disease concern" data-ar="مرض وراثي">Family disease concern</option>
+      <option value="loss of consciousness" data-en="Loss of consciousness" data-ar="فقدان الوعي">Loss of consciousness</option>
+    </select>
+  </div>
+
+  <div class="container cards" id="servicesCards">
+
+    <!-- التحاليل -->
+    <div class="card" data-symptoms="fatigue,pale,weakness">
+      <div class="icon">🩸</div>
+      <h3 data-en="Complete Blood Count (CBC)" data-ar="تحليل صورة دم كاملة">Complete Blood Count (CBC)</h3>
+      <p data-en="Detailed blood analysis." data-ar="تحليل شامل لمكونات الدم">Detailed blood analysis.</p>
+      <p class="price" data-en="Price: 250 EGP" data-ar="السعر: 250 جنيه">Price: 250 EGP</p>
+      <p style="font-weight:bold; color:#0077b6;" data-en="💸 10% discount for online booking" data-ar="💸 خصم 10% عند الحجز أونلاين">
+  💸 10% discount for online booking
+</p>
+      <a href="booking.html" class="btn" data-en="Book Now" data-ar="احجز الآن">Book Now</a>
+    </div>
+
+    <div class="card" data-symptoms="fever,cough,loss of taste">
+      <div class="icon">🦠</div>
+      <h3 data-en="COVID-19 Test" data-ar="تحليل فيروس كورونا">COVID-19 Test</h3>
+      <p data-en="Fast and reliable testing." data-ar="تحليل سريع وموثوق">Fast and reliable testing.</p>
+      <p class="price" data-en="Price: 300 EGP" data-ar="السعر: 300 جنيه">Price: 300 EGP</p>
+      <p style="font-weight:bold; color:#0077b6;" data-en="💸 10% discount for online booking" data-ar="💸 خصم 10% عند الحجز أونلاين">
+  💸 10% discount for online booking
+</p>
+      <a href="booking.html" class="btn" data-en="Book Now" data-ar="احجز الآن">Book Now</a>
+    </div>
+
+    <div class="card" data-symptoms="mood swings,irregular periods">
+      <div class="icon">🧬</div>
+      <h3 data-en="Hormone Test" data-ar="تحاليل الهرمونات">Hormone Test</h3>
+      <p data-en="Accurate hormone level tests." data-ar="تحاليل دقيقة لمستويات الهرمونات">Accurate hormone level tests.</p>
+      <p class="price" data-en="Price: 350 EGP" data-ar="السعر: 350 جنيه">Price: 350 EGP</p>
+      <p style="font-weight:bold; color:#0077b6;" data-en="💸 10% discount for online booking" data-ar="💸 خصم 10% عند الحجز أونلاين">
+  💸 10% discount for online booking
+</p>
+      <a href="booking.html" class="btn" data-en="Book Now" data-ar="احجز الآن">Book Now</a>
+    </div>
+
+    <div class="card" data-symptoms="family disease">
+      <div class="icon">🧬</div>
+      <h3 data-en="DNA Test" data-ar="تحليل DNA">DNA Test</h3>
+      <p data-en="Advanced genetic testing services." data-ar="خدمة التحليل الجيني">Advanced genetic testing services.</p>
+      <p class="price" data-en="Price: 500 EGP" data-ar="السعر: 500 جنيه">Price: 1200 EGP</p>
+      <p style="font-weight:bold; color:#0077b6;" data-en="💸 10% discount for online booking" data-ar="💸 خصم 10% عند الحجز أونلاين">
+  💸 10% discount for online booking
+</p>
+      <a href="booking.html" class="btn" data-en="Book Now" data-ar="احجز الآن">Book Now</a>
+    </div>
+
+    <div class="card" data-symptoms="loss of consciousness">
+      <div class="icon">🩸</div>
+      <h3 data-en="Diabetes Test" data-ar="تحليل السكري">Diabetes Test</h3>
+      <p data-en="Monitor your blood sugar levels." data-ar="مراقبة مستوى السكر في الدم">Monitor your blood sugar levels.</p>
+      <p class="price" data-en="Price: 200 EGP" data-ar="السعر: 200 جنيه">Price: 200 EGP</p>
+      <p style="font-weight:bold; color:#0077b6;" data-en="💸 10% discount for online booking" data-ar="💸 خصم 10% عند الحجز أونلاين">
+  💸 10% discount for online booking
+</p>
+      <a href="booking.html" class="btn" data-en="Book Now" data-ar="احجز الآن">Book Now</a>
+    </div>
+
+    <div class="card" data-symptoms="nausea,period delay">
+      <div class="icon">🤰</div>
+      <h3 data-en="Pregnancy Test" data-ar="تحليل الحمل">Pregnancy Test</h3>
+      <p data-en="Reliable and quick pregnancy testing." data-ar="تحليل حمل سريع وموثوق">Reliable and quick pregnancy testing.</p>
+      <p class="price" data-en="Price: 180 EGP" data-ar="السعر: 180 جنيه">Price: 180 EGP</p>
+      <p style="font-weight:bold; color:#0077b6;" data-en="💸 10% discount for online booking" data-ar="💸 خصم 10% عند الحجز أونلاين">
+  💸 10% discount for online booking
+</p>
+      <a href="booking.html" class="btn" data-en="Book Now" data-ar="احجز الآن">Book Now</a>
+    </div>
+
+    <!-- إضافات من عندي -->
+    <div class="card" data-symptoms="fatigue,weakness">
+      <div class="icon">💊</div>
+      <h3 data-en="Vitamin D Test" data-ar="تحاليل فيتامين D">Vitamin D Test</h3>
+      <p data-en="Check your Vitamin D levels accurately." data-ar="تحليل دقيق لمستوى فيتامين D">Check your Vitamin D levels accurately.</p>
+      <p class="price" data-en="Price: 220 EGP" data-ar="السعر: 220 جنيه">Price: 220 EGP</p>
+      <p style="font-weight:bold; color:#0077b6;" data-en="💸 10% discount for online booking" data-ar="💸 خصم 10% عند الحجز أونلاين">
+  💸 10% discount for online booking
+</p>
+      <a href="booking.html" class="btn" data-en="Book Now" data-ar="احجز الآن">Book Now</a>
+    </div>
+
+    <div class="card" data-symptoms="fatigue,weakness">
+      <div class="icon">🫀</div>
+      <h3 data-en="Cholesterol Test" data-ar="تحاليل الكوليسترول">Cholesterol Test</h3>
+      <p data-en="Detailed cholesterol analysis." data-ar="تحليل شامل للكوليسترول">Detailed cholesterol analysis.</p>
+      <p class="price" data-en="Price: 250 EGP" data-ar="السعر: 250 جنيه">Price: 250 EGP</p>
+      <p style="font-weight:bold; color:#0077b6;" data-en="💸 10% discount for online booking" data-ar="💸 خصم 10% عند الحجز أونلاين">
+  💸 10% discount for online booking
+</p>
+      <a href="booking.html" class="btn" data-en="Book Now" data-ar="احجز الآن">Book Now</a>
+    </div>
+
+    <div class="card" data-symptoms="fatigue,weakness">
+      <div class="icon">🩺</div>
+      <h3 data-en="Thyroid Test" data-ar="تحاليل الغدة الدرقية">Thyroid Test</h3>
+      <p data-en="Comprehensive thyroid function analysis." data-ar="تحليل شامل لوظائف الغدة الدرقية">Comprehensive thyroid function analysis.</p>
+      <p class="price" data-en="Price: 300 EGP" data-ar="السعر: 300 جنيه">Price: 300 EGP</p>
+      <p style="font-weight:bold; color:#0077b6;" data-en="💸 10% discount for online booking" data-ar="💸 خصم 10% عند الحجز أونلاين">
+  💸 10% discount for online booking
+</p>
+      <a href="booking.html" class="btn" data-en="Book Now" data-ar="احجز الآن">Book Now</a>
+    </div>
+
+    <!-- مثال لكارت جديد -->
+<div class="card" data-symptoms="weakness,fatigue">
+  <div class="icon">🚽</div>
+  <h3 data-en="Urine Test" data-ar="تحليل بول">Urine Test</h3>
+  <p data-en="Accurate urine test results." data-ar="نتائج دقيقة لتحليل البول">Accurate urine test results.</p>
+  <p class="price" data-en="Price: 150 EGP" data-ar="السعر: 150 جنيه">Price: 150 EGP</p>
+  <p style="font-weight:bold; color:#0077b6;" data-en="💸 10% discount for online booking" data-ar="💸 خصم 10% عند الحجز أونلاين">
+  💸 10% discount for online booking
+</p>
+  <a href="booking.html" class="btn" data-en="Book Now" data-ar="احجز الآن">Book Now</a>
+</div>
+
+<div class="card" data-symptoms="stomach issues">
+  <div class="icon">💩</div>
+  <h3 data-en="Stool Test" data-ar="تحليل براز">Stool Test</h3>
+  <p data-en="Check for digestive issues." data-ar="كشف مشاكل الجهاز الهضمي">Check for digestive issues.</p>
+  <p class="price" data-en="Price: 180 EGP" data-ar="السعر: 180 جنيه">Price: 180 EGP</p>
+  <p style="font-weight:bold; color:#0077b6;" data-en="💸 10% discount for online booking" data-ar="💸 خصم 10% عند الحجز أونلاين">
+  💸 10% discount for online booking
+</p>
+  <a href="booking.html" class="btn" data-en="Book Now" data-ar="احجز الآن">Book Now</a>
+</div>
+
+<div class="card" data-symptoms="cholesterol,fatigue">
+  <div class="icon">🥓</div>
+  <h3 data-en="Triglycerides Test" data-ar="تحليل الدهون الثلاثية">Triglycerides Test</h3>
+  <p data-en="Detailed triglycerides analysis." data-ar="تحليل شامل للدهون الثلاثية">Detailed triglycerides analysis.</p>
+  <p class="price" data-en="Price: 220 EGP" data-ar="السعر: 220 جنيه">Price: 220 EGP</p>
+  <p style="font-weight:bold; color:#0077b6;" data-en="💸 10% discount for online booking" data-ar="💸 خصم 10% عند الحجز أونلاين">
+  💸 10% discount for online booking
+</p>
+  <a href="booking.html" class="btn" data-en="Book Now" data-ar="احجز الآن">Book Now</a>
+</div>
+
+<div class="card" data-symptoms="fatigue,weakness,pale">
+  <div class="icon">🩸</div>
+  <h3 data-en="Iron Test" data-ar="تحليل الحديد">Iron Test</h3>
+  <p data-en="Check iron levels accurately." data-ar="تحليل دقيق لمستوى الحديد">Check iron levels accurately.</p>
+  <p class="price" data-en="Price: 200 EGP" data-ar="السعر: 200 جنيه">Price: 200 EGP</p>
+  <p style="font-weight:bold; color:#0077b6;" data-en="💸 10% discount for online booking" data-ar="💸 خصم 10% عند الحجز أونلاين">
+  💸 10% discount for online booking
+</p>
+  <a href="booking.html" class="btn" data-en="Book Now" data-ar="احجز الآن">Book Now</a>
+</div>
+
+<div class="card" data-symptoms="weakness,fatigue,kidney issues">
+  <div class="icon">🫀</div>
+  <h3 data-en="Kidney Function Test" data-ar="تحليل وظائف الكلى">Kidney Function Test</h3>
+  <p data-en="Assess kidney function." data-ar="تقييم وظائف الكلى بدقة">Assess kidney function.</p>
+  <p class="price" data-en="Price: 250 EGP" data-ar="السعر: 250 جنيه">Price: 250 EGP</p>
+  <p style="font-weight:bold; color:#0077b6;" data-en="💸 10% discount for online booking" data-ar="💸 خصم 10% عند الحجز أونلاين">
+  💸 10% discount for online booking
+</p>
+  <a href="booking.html" class="btn" data-en="Book Now" data-ar="احجز الآن">Book Now</a>
+</div>
+
+    <!-- Home Visit Service -->
+    <div class="card home-service">
+      <h3 data-en="Home Visit Service" data-ar="خدمة الزيارة المنزلية">Home Visit Service</h3>
+      <p data-en="We collect samples from your home, especially for seniors and chronic patients."
+         data-ar="نوفر خدمة سحب العينات من المنزل، خاصة لكبار السن ومرضى الأمراض المزمنة.">
+        We collect samples from your home, especially for seniors and chronic patients.
+      </p>
+      <p style="font-weight:bold; color:#0077b6;"
+         data-en="Call us to schedule a home visit 📞"
+         data-ar="اتصل بنا لحجز زيارة منزلية 📞">
+        Call us to schedule a home visit 📞
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+<script>
+// ====== Drop-down smart filter ======
+const symptomDropdown = document.getElementById("symptomDropdown");
+const serviceCards = document.querySelectorAll("#servicesCards .card");
+
+symptomDropdown.addEventListener("change", () => {
+  const selected = symptomDropdown.value.toLowerCase();
+  serviceCards.forEach(card => {
+    const symptoms = card.dataset.symptoms ? card.dataset.symptoms.split(",") : [];
+    if(selected === "" || symptoms.includes(selected)){
+      card.style.display = "flex";
+    } else {
+      card.style.display = "none";
+    }
+  });
+});
+
+// ====== Language Toggle ======
+let lang = "en";
+document.getElementById("langBtn").addEventListener("click", () => {
+  lang = lang === "en" ? "ar" : "en";
+  document.querySelectorAll("[data-en]").forEach(el => {
+    if(el.tagName === "OPTION") el.textContent = el.getAttribute(`data-${lang}`);
+    else el.textContent = el.getAttribute(`data-${lang}`);
+  });
+  document.body.dir = lang === "ar" ? "rtl" : "ltr";
+});
+</script>
+
+</body>
+</html>

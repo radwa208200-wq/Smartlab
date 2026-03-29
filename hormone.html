@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hormone Test Report</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+
+    <h2 class="logo">Health<span>Life</span></h2>
+
+    <nav>
+      <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+      <a href="services.html" data-en="Other Services" data-ar="خدمات اخرى">Other Services</a>
+      <a href="about.html" data-en="About" data-ar="عن المعمل">About</a>
+      <a href="contact.html" data-en="Contact" data-ar="تواصل معنا">Contact</a>
+
+      <a href="booking.html" class="btn"
+         data-en="Book Test" data-ar="احجز تحليل">
+        Book Test
+      </a>
+
+      <button class="btn" id="langBtn" onclick="toggleLang()">AR</button>
+    </nav>
+
+  </div>
+</header>
+
+<section class="page hormone-page">
+
+  <div class="container report-layout">
+
+    <!-- النص -->
+    <div class="report-text">
+      <h1 data-en="Hormone Test Report" data-ar="تقرير تحليل الهرمونات">
+        Hormone Test Report
+      </h1>
+
+      <pre id="typingText" class="typing-box"></pre>
+    </div>
+
+    <!-- الصورة -->
+    <div class="report-image">
+      <img src="images/lab3.jpeg" alt="Hormone Test">
+    </div>
+
+  </div>
+
+</section>
+
+<script src="js/script.js"></script>
+
+<script>
+/* =====================
+   Hormone Live Typing
+===================== */
+
+const reportText = {
+  en: `
+Hormone tests measure hormone levels in the body
+to help diagnose hormonal imbalances.
+
+• Thyroid Hormones:
+  Evaluate metabolism and energy levels.
+
+• Reproductive Hormones:
+  Important for fertility and menstrual health.
+
+• Stress Hormones:
+  Measure cortisol levels related to stress.
+
+• Growth Hormones:
+  Assess growth and development functions.
+
+⚠️ Abnormal hormone levels may affect mood,
+weight, sleep, and overall health.
+Always consult your doctor for treatment.
+`,
+  ar: `
+تحاليل الهرمونات تقيس مستوى الهرمونات في الجسم
+للمساعدة في تشخيص أي خلل هرموني.
+
+• هرمونات الغدة الدرقية:
+  مسؤولة عن معدل الحرق والطاقة.
+
+• هرمونات الخصوبة:
+  مهمة للصحة الإنجابية والدورة الشهرية.
+
+• هرمونات التوتر:
+  تقيس مستوى الكورتيزول المرتبط بالضغط العصبي.
+
+• هرمونات النمو:
+  تساعد في تقييم النمو ووظائف الجسم.
+
+⚠️ اضطراب الهرمونات قد يؤثر على
+المزاج، الوزن، النوم والصحة العامة.
+يجب استشارة الطبيب المختص.
+`
+};
+
+const target = document.getElementById("typingText");
+let charIndex = 0;
+let typingInterval = null;
+
+function startTyping() {
+  if (!target) return;
+
+  clearInterval(typingInterval);
+  target.textContent = "";
+  charIndex = 0;
+
+  const text = reportText[lang];
+
+  typingInterval = setInterval(() => {
+    target.textContent += text.charAt(charIndex);
+    charIndex++;
+
+    if (charIndex >= text.length) {
+      clearInterval(typingInterval);
+    }
+  }, 30);
+}
+
+window.addEventListener("load", startTyping);
+
+let lastLang = lang;
+setInterval(() => {
+  if (lang !== lastLang) {
+    lastLang = lang;
+    startTyping();
+  }
+}, 200);
+</script>
+
+</body>
+</html>

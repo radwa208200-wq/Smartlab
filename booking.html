@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Book a Test</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+
+    <h2 class="logo">Health<span>Life</span></h2>
+
+    <nav>
+      <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+      <a href="services.html" data-en="Other Services" data-ar="خدمات اخرى">Other Services</a>
+      <a href="about.html" data-en="About" data-ar="عن المعمل">About</a>
+      <a href="contact.html" data-en="Contact" data-ar="تواصل معنا">Contact</a>
+
+      <!-- Book Test -->
+      <a href="booking.html" class="btn"
+         data-en="Book Test" data-ar="احجز تحليل">
+        Book Test
+      </a>
+
+      <!-- زر الترجمة -->
+      <button class="btn" id="langBtn" onclick="toggleLang()">AR</button>
+    </nav>
+
+  </div>
+</header>
+
+<section class="page">
+  <h1 data-en="Book Your Test"
+    data-ar="احجز تحليلك">
+Book Your Test
+</h1>
+  <form class="container contact-box" id="bookingForm">
+  <input type="text"
+         placeholder="Full Name"
+         data-en-placeholder="Full Name"
+         data-ar-placeholder="الاسم بالكامل"
+         required>
+
+  <input type="tel"
+         placeholder="Phone Number"
+         data-en-placeholder="Phone Number"
+         data-ar-placeholder="رقم الهاتف"
+         required>
+
+  <input type="email"
+         placeholder="Email"
+         data-en-placeholder="Email"
+         data-ar-placeholder="البريد الإلكتروني"
+         required>
+
+  <select id="testSelect">
+    <option value="">Select Test</option>
+    <option value="CBC">CBC</option>
+    <option value="COVID-19">COVID-19</option>
+    <option value="Hormone Test">Hormone Test</option>
+    <option value="DNA Test">DNA Test</option>
+  </select>
+
+  <input type="date" id="dateInput" required>
+<!-- Available Doctors -->
+<div id="doctorBox" style="margin-top:15px;">
+  <p data-en="Available Doctors"
+     data-ar="الأطباء المتاحين">
+     Available Doctors
+  </p>
+
+  <select id="doctorSelect">
+    <option value="">
+      Select Doctor
+    </option>
+  </select>
+</div>
+
+
+  <!-- Payment Method -->
+<div class="payment-box">
+  <p data-en="Payment Method" data-ar="طريقة الدفع">Payment Method</p>
+
+  <label>
+    <input type="radio" name="payment" value="cash" checked>
+    <span data-en="Cash on visit" data-ar="الدفع كاش عند الزيارة">Cash on visit</span>
+  </label>
+
+  <label>
+    <input type="radio" name="payment" value="visa">
+    <span data-en="Visa / Card" data-ar="فيزا / كارت بنكي">Visa / Card</span>
+  </label>
+</div>
+
+<!-- Visa Details (hidden by default) -->
+<div id="visaBox" class="visa-box">
+  <input type="text" placeholder="Card Number">
+  <input type="text" placeholder="Card Holder Name">
+  <input type="month">
+</div>
+
+<p id="paymentMsg" class="smart-msg"></p>
+
+
+  <button class="btn"
+          data-en="Book Now"
+          data-ar="تأكيد الحجز">
+    Book Now
+  </button>
+
+  <!-- حيز عرض النص الذكي -->
+  <p id="testTip" style="margin-top:10px; color:#0077b6; font-weight:bold;"></p>
+</form>
+
+<!-- العنصر الجديد -->
+<div id="instructions" style="margin-top:15px; color:#0077b6; font-weight:bold;"></div>
+</section>
+
+<script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diabetes Test Report</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+
+    <h2 class="logo">Health<span>Life</span></h2>
+
+    <nav>
+      <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+      <a href="services.html" data-en="Other Services" data-ar="خدمات اخرى">Other Services</a>
+      <a href="about.html" data-en="About" data-ar="عن المعمل">About</a>
+      <a href="contact.html" data-en="Contact" data-ar="تواصل معنا">Contact</a>
+
+      <a href="booking.html" class="btn"
+         data-en="Book Test" data-ar="احجز تحليل">
+        Book Test
+      </a>
+
+      <button class="btn" id="langBtn" onclick="toggleLang()">AR</button>
+    </nav>
+
+  </div>
+</header>
+
+<section class="page diabetes">
+
+  <div class="container report-layout">
+
+    <!-- النص -->
+    <div class="report-text">
+      <h1 data-en="Diabetes Test Report" data-ar="تقرير تحليل السكري">
+        Diabetes Test Report
+      </h1>
+
+      <pre id="typingText" class="typing-box"></pre>
+    </div>
+
+    <!-- الصورة -->
+    <div class="report-image">
+      <img src="images/diabetes.jpeg" alt="Diabetes Test">
+    </div>
+
+  </div>
+
+</section>
+
+<script src="js/script.js"></script>
+
+<script>
+/* =====================
+   DNA Live Typing Report
+===================== */
+
+const reportText = {
+  en: `• Measures blood sugar levels.
+• Helps diagnose and monitor diabetes.
+
+Types of diabetes tests:
+• Fasting Blood Sugar
+• Random Blood Sugar
+• HbA1c Test
+
+High blood sugar symptoms:
+- Frequent urination
+- Excessive thirst
+- Fatigue
+- Blurred vision
+
+Preparation Tips:
+• Fasting 8 hours (if required)
+• Avoid sugar before test
+• Follow doctor instructions`,
+ ar: `• يقيس مستوى السكر في الدم
+• يساعد في تشخيص ومتابعة مرض السكري
+
+أنواع تحليل السكر:
+• سكر صائم
+• سكر عشوائي
+• التراكمي HbA1c
+
+أعراض ارتفاع السكر:
+- كثرة التبول
+- العطش المستمر
+- الإرهاق
+- تشوش الرؤية
+
+تعليمات قبل التحليل:
+• صيام 8 ساعات (إن لزم)
+• تجنب السكريات
+• الالتزام بتعليمات الطبيب`
+};
+
+const target = document.getElementById("typingText");
+let charIndex = 0;
+let typingInterval = null;
+
+function startTyping() {
+  if (!target) return;
+
+  clearInterval(typingInterval);
+  target.textContent = "";
+  charIndex = 0;
+
+  const text = reportText[lang];
+
+  typingInterval = setInterval(() => {
+    target.textContent += text.charAt(charIndex);
+    charIndex++;
+
+    if (charIndex >= text.length) {
+      clearInterval(typingInterval);
+    }
+  }, 30);
+}
+
+// أول ما الصفحة تفتح
+window.addEventListener("load", startTyping);
+
+// متابعة تغيير اللغة
+let lastLang = lang;
+setInterval(() => {
+  if (lang !== lastLang) {
+    lastLang = lang;
+    startTyping();
+  }
+}, 200);
+</script>
+
+</body>
+</html>
